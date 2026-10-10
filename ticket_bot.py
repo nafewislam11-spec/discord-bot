@@ -789,6 +789,27 @@ class TicketBot(commands.Bot):
             await site.start()
             print(f"Health server running on port {port}")
 
+        asyncio.create_task(self._keep_alive_loop())
+
+    async def _keep_alive_loop(self):
+        await asyncio.sleep(60)
+        url = os.environ.get("RENDER_EXTERNAL_URL") or os.environ.get("PING_URL")
+        if not url:
+            print("Keep-alive: No RENDER_EXTERNAL_URL or PING_URL found.")
+            return
+        if not url.startswith("http"):
+            url = f"https://{url}"
+        print(f"Keep-alive: Auto-ping loop started for {url}")
+        import aiohttp
+        while not self.is_closed():
+            try:
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(url, timeout=aiohttp.ClientTimeout(total=15)) as resp:
+                        print(f"Keep-alive: Pinged {url} [status {resp.status}]")
+            except Exception as e:
+                print(f"Keep-alive: Ping failed: {e}")
+            await asyncio.sleep(480)
+
     async def on_ready(self):
         print(f"Logged in as {self.user} in {len(self.guilds)} server(s).")
 
