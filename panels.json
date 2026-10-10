@@ -1,0 +1,40 @@
+{
+  "6fc40dd9": {
+    "name": "Nafew",
+    "channel_id": 1557414024335851572,
+    "category_id": 1557413890948861953,
+    "role_ids": [
+      1557434254579863772
+    ],
+    "title": "🎫 Nafew",
+    "description": "Click the button below to open a ticket.\nOnly you and our team will see it.",
+    "button_label": "Create Ticket",
+    "button_emoji": "🎫",
+    "color": "#5865F2",
+    "welcome": "",
+    "name_format": "ticket-{user}",
+    "guild_id": 1557413286683611266,
+    "message_id": 1557437015283343431,
+    "posted_channel_id": 1557414024335851572,
+    "counter": 3
+  },
+  "c7c6f0a8": {
+    "name": "short form",
+    "channel_id": 1557414122486763602,
+    "category_id": 1557418415919202375,
+    "role_ids": [
+      1557434254579863772
+    ],
+    "title": "🎫 short form",
+    "description": "Click the button below to open a ticket.\nOnly you and our team will see it.",
+    "button_label": "Create Ticket",
+    "button_emoji": "🎫",
+    "color": "#5865F2",
+    "welcome": "",
+    "name_format": "ticket-{user}",
+    "guild_id": 1557413286683611266,
+    "message_id": 1557469286673551451,
+    "posted_channel_id": 1557414122486763602,
+    "counter": 1
+  }
+}
